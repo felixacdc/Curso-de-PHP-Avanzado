@@ -47,7 +47,7 @@
                 session = document.getElementById('session').checked ? true : false;
                 
                 if ( user != '' && pass != '' ) {
-                    form = 'user=' + user + '&pass=' + pass + '&session=' +session;
+                    form = 'user=' + user  + '&pass=' + pass + '&session=' + session; 
 
                     // Se crea un if compacto para verificar si el XMLHttpRequest que sirve para utilizar ajax esta habilitado en Explorer
                     connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
@@ -63,7 +63,7 @@
                                 result += '<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>';
                                 result += '<strong>CONECTADO:</strong> Bienvenido, Usuario.';
                                 result += '</div>';
-                                location.href = '?view=index';
+                                window.location = '?view=index';
                                 document.getElementById('_AJAX_').innerHTML = result;
                             } else {
                                 result = '<div class="alert alert-dismissible alert-danger text-center">';
@@ -85,6 +85,7 @@
                     }
 
                     connect.open('POST', '?view=login', true);
+                    connect.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                     connect.send(form);
                 } else {
                     result = '<div class="alert alert-dismissible alert-danger text-center">';

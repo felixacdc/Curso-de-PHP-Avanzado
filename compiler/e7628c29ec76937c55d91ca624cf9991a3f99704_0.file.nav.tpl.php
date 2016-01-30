@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-01-30 05:09:42
+<?php /* Smarty version 3.1.27, created on 2016-01-30 20:54:48
          compiled from "/opt/lampp/htdocs/GitHub/Curso-de-PHP-Avanzado/styles/templates/overall/nav.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:179013235656ac3786efbd21_17998211%%*/
+/*%%SmartyHeaderCode:26175813756ad1508bd0692_92722334%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e7628c29ec76937c55d91ca624cf9991a3f99704' => 
     array (
       0 => '/opt/lampp/htdocs/GitHub/Curso-de-PHP-Avanzado/styles/templates/overall/nav.tpl',
-      1 => 1454107505,
+      1 => 1454183685,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '179013235656ac3786efbd21_17998211',
+  'nocache_hash' => '26175813756ad1508bd0692_92722334',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56ac3786f02576_57234496',
+  'unifunc' => 'content_56ad1508ca3df8_94869332',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56ac3786f02576_57234496')) {
-function content_56ac3786f02576_57234496 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56ad1508ca3df8_94869332')) {
+function content_56ad1508ca3df8_94869332 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '179013235656ac3786efbd21_17998211';
+$_smarty_tpl->properties['nocache_hash'] = '26175813756ad1508bd0692_92722334';
 ?>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -59,9 +59,24 @@ $_smarty_tpl->properties['nocache_hash'] = '179013235656ac3786efbd21_17998211';
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
+      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <?php if (isset($_SESSION['user'])) {?>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['user'];?>
+ <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="?view=perfil">Perfil</a></li>
+                    <li><a href="?view=cuenta">cuenta</a></li>
+                    <li><a href="?view=logout">Salir</a></li>
+                </ul>
+            </li>
+        <?php } else { ?>
+            <li><a href="?view=login">Login</a></li>
+            <li><a href="?view=reg">Registro</a></li>
+        <?php }?>
       </ul>
+      
     </div>
   </div>
 </nav><?php }

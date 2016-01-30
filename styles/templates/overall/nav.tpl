@@ -33,9 +33,23 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
+      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        {if isset($smarty.session.user)}
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{$smarty.session.user} <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="?view=perfil">Perfil</a></li>
+                    <li><a href="?view=cuenta">cuenta</a></li>
+                    <li><a href="?view=logout">Salir</a></li>
+                </ul>
+            </li>
+        {else}
+            <li><a href="?view=login">Login</a></li>
+            <li><a href="?view=reg">Registro</a></li>
+        {/if}
       </ul>
+      
     </div>
   </div>
 </nav>
