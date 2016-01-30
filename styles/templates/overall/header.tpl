@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Prinick Tutoriales - www.prinick.com</title>
+    <title>PHP Avanzado</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="styles/css/bootstrap.min.css">
