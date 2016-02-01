@@ -24,7 +24,7 @@
                 <label for="pass" class="sr-only">Contraseña</label>
                 <input type="password" id="pass" class="form-control" placeholder="Contraseña" required="">
                 <label for="pass" class="sr-only">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="Correo Electronico" required="">
+                <input type="email" id="email" class="form-control" placeholder="Correo Electronico" required=""><br />
                 
                 <button class="btn btn-primary btn-block" id="send_request" type="button">Registrarme</button>
                 </div>
@@ -59,14 +59,21 @@
                             if ( parseInt(connect.responseText) == 1 ) {
                                 result = '<div class="alert alert-dismissible alert-info text-center">';
                                 result += '<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>';
-                                result += '<strong>CONECTADO:</strong> Bienvenido, Usuario.';
+                                result += '<strong>Registro Completado:</strong> Bienvenido, Usuario.';
                                 result += '</div>';
                                 window.location = '?view=index';
                                 document.getElementById('_AJAX_').innerHTML = result;
-                            } else {
+                            } else if( parseInt(connect.responseText) == 2 ) {
                                 result = '<div class="alert alert-dismissible alert-danger text-center">';
                                 result += '<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>';
-                                result += '<strong>ERROR:</strong> Datos incorrectos.';
+                                result += '<strong>ERROR:</strong> El usuario ya existe.';
+                                result += '</div>';
+
+                                document.getElementById('_AJAX_').innerHTML = result;
+                            } else if( parseInt(connect.responseText) == 3 ) {
+                                result = '<div class="alert alert-dismissible alert-danger text-center">';
+                                result += '<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>';
+                                result += '<strong>ERROR:</strong> El correo ya existe.';
                                 result += '</div>';
 
                                 document.getElementById('_AJAX_').innerHTML = result;

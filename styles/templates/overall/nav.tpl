@@ -12,7 +12,10 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        {if (isset($smarty.get.view) and $smarty.get.view == 'index') or !isset($smarty.get.view)}
+        <li class="active">
+        {else}
+        <li>{/if}<a href="?view=index">Inicio</a></li>
         <li><a href="#">Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -45,8 +48,14 @@
                 </ul>
             </li>
         {else}
-            <li><a href="?view=login">Login</a></li>
-            <li><a href="?view=reg">Registro</a></li>
+            {if isset($smarty.get.view) and $smarty.get.view == 'login'}
+                <li class="active">
+            {else}
+            <li>{/if}<a href="?view=login">Login</a></li>
+            {if isset($smarty.get.view) and $smarty.get.view == 'reg'}
+                <li class="active">
+            {else}
+            <li>{/if}<a href="?view=reg">Registro</a></li>
         {/if}
       </ul>
       

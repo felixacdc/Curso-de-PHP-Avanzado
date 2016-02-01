@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-01-30 21:04:24
+<?php /* Smarty version 3.1.27, created on 2016-02-01 06:21:48
          compiled from "/opt/lampp/htdocs/GitHub/Curso-de-PHP-Avanzado/styles/templates/public/registro.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:154435744956ad1748414606_37294647%%*/
+/*%%SmartyHeaderCode:60984256456aeeb6cecdc27_15696775%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '268122f90b9dda4712be5094abcce720c8f670ca' => 
     array (
       0 => '/opt/lampp/htdocs/GitHub/Curso-de-PHP-Avanzado/styles/templates/public/registro.tpl',
-      1 => 1454184223,
+      1 => 1454304105,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '154435744956ad1748414606_37294647',
+  'nocache_hash' => '60984256456aeeb6cecdc27_15696775',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56ad17484ee871_15200046',
+  'unifunc' => 'content_56aeeb6cf1c560_83961646',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56ad17484ee871_15200046')) {
-function content_56ad17484ee871_15200046 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56aeeb6cf1c560_83961646')) {
+function content_56aeeb6cf1c560_83961646 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '154435744956ad1748414606_37294647';
+$_smarty_tpl->properties['nocache_hash'] = '60984256456aeeb6cecdc27_15696775';
 echo $_smarty_tpl->getSubTemplate ('overall/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -53,7 +53,7 @@ echo $_smarty_tpl->getSubTemplate ('overall/header.tpl', $_smarty_tpl->cache_id,
                 <label for="pass" class="sr-only">Contraseña</label>
                 <input type="password" id="pass" class="form-control" placeholder="Contraseña" required="">
                 <label for="pass" class="sr-only">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="Correo Electronico" required="">
+                <input type="email" id="email" class="form-control" placeholder="Correo Electronico" required=""><br />
                 
                 <button class="btn btn-primary btn-block" id="send_request" type="button">Registrarme</button>
                 </div>
@@ -91,14 +91,21 @@ echo $_smarty_tpl->getSubTemplate ('overall/header.tpl', $_smarty_tpl->cache_id,
                             if ( parseInt(connect.responseText) == 1 ) {
                                 result = '<div class="alert alert-dismissible alert-info text-center">';
                                 result += '<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>';
-                                result += '<strong>CONECTADO:</strong> Bienvenido, Usuario.';
+                                result += '<strong>Registro Completado:</strong> Bienvenido, Usuario.';
                                 result += '</div>';
                                 window.location = '?view=index';
                                 document.getElementById('_AJAX_').innerHTML = result;
-                            } else {
+                            } else if( parseInt(connect.responseText) == 2 ) {
                                 result = '<div class="alert alert-dismissible alert-danger text-center">';
                                 result += '<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>';
-                                result += '<strong>ERROR:</strong> Datos incorrectos.';
+                                result += '<strong>ERROR:</strong> El usuario ya existe.';
+                                result += '</div>';
+
+                                document.getElementById('_AJAX_').innerHTML = result;
+                            } else if( parseInt(connect.responseText) == 3 ) {
+                                result = '<div class="alert alert-dismissible alert-danger text-center">';
+                                result += '<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i></button>';
+                                result += '<strong>ERROR:</strong> El correo ya existe.';
                                 result += '</div>';
 
                                 document.getElementById('_AJAX_').innerHTML = result;
