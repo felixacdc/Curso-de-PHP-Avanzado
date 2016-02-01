@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-01 06:20:43
+<?php /* Smarty version 3.1.27, created on 2016-02-01 19:44:26
          compiled from "/opt/lampp/htdocs/GitHub/Curso-de-PHP-Avanzado/styles/templates/overall/nav.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:29469148056aeeb2bc29b06_95881269%%*/
+/*%%SmartyHeaderCode:73817825056afa78a0e4724_20847622%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e7628c29ec76937c55d91ca624cf9991a3f99704' => 
     array (
       0 => '/opt/lampp/htdocs/GitHub/Curso-de-PHP-Avanzado/styles/templates/overall/nav.tpl',
-      1 => 1454304040,
+      1 => 1454352264,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29469148056aeeb2bc29b06_95881269',
+  'nocache_hash' => '73817825056afa78a0e4724_20847622',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56aeeb2bc8a999_13698096',
+  'unifunc' => 'content_56afa78a13b978_81206807',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56aeeb2bc8a999_13698096')) {
-function content_56aeeb2bc8a999_13698096 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56afa78a13b978_81206807')) {
+function content_56afa78a13b978_81206807 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '29469148056aeeb2bc29b06_95881269';
+$_smarty_tpl->properties['nocache_hash'] = '73817825056afa78a0e4724_20847622';
 ?>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -69,7 +69,8 @@ $_smarty_tpl->properties['nocache_hash'] = '29469148056aeeb2bc29b06_95881269';
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['user'];?>
  <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="?view=perfil">Perfil</a></li>
+                    <li><a href="?view=perfil&user=<?php echo $_SESSION['id'];?>
+">Perfil</a></li>
                     <li><a href="?view=cuenta">cuenta</a></li>
                     <li><a href="?view=logout">Salir</a></li>
                 </ul>

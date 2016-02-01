@@ -14,7 +14,8 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="styles/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/css/style.min.css">
-    <link rel="stylesheet" href="fonts/font-awesome.min.css"> 
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/css/home.css">
       
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

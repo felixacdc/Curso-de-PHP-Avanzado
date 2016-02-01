@@ -42,7 +42,7 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{$smarty.session.user} <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="?view=perfil">Perfil</a></li>
+                    <li><a href="?view=perfil&user={$smarty.session.id}">Perfil</a></li>
                     <li><a href="?view=cuenta">cuenta</a></li>
                     <li><a href="?view=logout">Salir</a></li>
                 </ul>
