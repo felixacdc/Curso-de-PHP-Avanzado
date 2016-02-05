@@ -6,9 +6,13 @@
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
+                   
+                   {if isset($smarty.get.view) and $smarty.get.view == 'buscar'}
+                    <li class="active"><a href="#">Resultado de busqueda</a></li>{/if}  
+                   
                     {if isset($smarty.get.type) and $smarty.get.type == 'tops'}
                     <li class="active">{else}<li>{/if}<a href="?view=index&type=tops">Los mejores</a></li>  
-                    {if !isset($smarty.get.type) or (isset($smarty.get.type) and $smarty.get.type == 'index')}
+                    {if !isset($smarty.get.type) and $smarty.get.view != 'buscar'}
                     <li class="active">{else}<li>{/if}<a href="?view=index">Inicio</a></li>
                     {if isset($smarty.get.type) and $smarty.get.type == '1'}
                     <li class="active">{else}<li>{/if}<a href="?view=index&type=1">Categoria 1</a></li>
@@ -55,6 +59,8 @@
                             {if $pages > 1}
                                 {if isset($smarty.get.type)}
                                     <a href="?view=index&type={$smarty.get.type}&page=2" class="btn btn-default">Siguiente</a>
+                                {else if isset($smarty.get.view) and $smarty.get.view == 'buscar'}
+                                    <a href="?view=buscar&page=2" class="btn btn-default">Siguiente</a>                                   
                                 {else}
                                     <a href="?view=index&page=2" class="btn btn-default">Siguiente</a>
                                 {/if}
@@ -67,6 +73,8 @@
                             {else}
                                 {if isset($smarty.get.type)}
                                     <a href="?view=index&type={$smarty.get.type}&page={$smarty.get.page - 1}" class="btn btn-default">Anterior</a>
+                                {else if isset($smarty.get.view) and $smarty.get.view == 'buscar'}
+                                    <a href="?view=buscar&page={$smarty.get.page - 1}" class="btn btn-default">Anterior</a> 
                                 {else}
                                     <a href="?view=index&page={$smarty.get.page - 1}" class="btn btn-default">Anterior</a>
                                 {/if}
@@ -75,6 +83,8 @@
                             {if $pages > 1 and $smarty.get.page >= 1 and $smarty.get.page < $pages}
                                 {if isset($smarty.get.type)}
                                     <a href="?view=index&type={$smarty.get.type}&page={$smarty.get.page + 1}" class="btn btn-default">Siguiente</a>
+                                {else if isset($smarty.get.view) and $smarty.get.view == 'buscar'}
+                                    <a href="?view=buscar&page={$smarty.get.page + 1}" class="btn btn-default">Siguiente</a> 
                                 {else}
                                     <a href="?view=index&page={$smarty.get.page + 1}" class="btn btn-default">Siguiente</a>
                                 {/if}
