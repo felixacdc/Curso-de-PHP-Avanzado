@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="styles/css/style.min.css">
     <link rel="stylesheet" href="fonts/font-awesome.min.css">
     <link rel="stylesheet" href="styles/css/home.css">
-      
+    <link rel="stylesheet" href="styles/css/datepicker.css">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
